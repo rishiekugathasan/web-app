@@ -6,6 +6,8 @@ const questions = require('./questions.json');
 const { google } = require("googleapis");
 const nodemailer = require('nodemailer');
 const pino = require('express-pino-logger')();
+const cors = require('cors');
+const path = require('path');
 const fs = require('fs');
 require('dotenv').config();
 
@@ -19,6 +21,10 @@ app.use(pino);
 //Body parsers
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+
+app.get('/',function(req,res) {
+    res.sendFile(path.join(__dirname + "/client/index.html"));
+});
 
 app.get('/whoweare',function(req,res) {
     res.sendFile('./dummyPages/whoWeAre.html',{root:__dirname});
@@ -137,13 +143,6 @@ mc.connect("mongodb://localhost:27017",function(err,client) {
 let port = process.env.PORT || 3001;
 app.listen(port);
 console.log('Server is listening at http://localhost:3001');
-
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('build'));
-    app.get("*",(req,res) => {
-        req.sendFile(path.resolve(__dirname,'build','index.html'));
-    });
-}
 
 function checkEmail(email) {
     //can add aol, outlook and other services
