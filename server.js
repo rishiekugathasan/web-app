@@ -17,13 +17,14 @@ app.use(session({secret: 'EgiNAjvvFVcbgAz'}));
 let db;
 
 app.use(pino);
+app.use(cors());
 
 //Body parsers
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
-app.get('/',function(req,res) {
-    res.sendFile(path.join(__dirname + "/client/index.html"));
+app.get('/', (req,res) => {
+    res.send("Hello World!");
 });
 
 app.get('/whoweare',function(req,res) {
