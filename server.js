@@ -5,6 +5,9 @@ const coaches = require('./coaches.json');
 const questions = require('./questions.json');
 const { google } = require("googleapis");
 const nodemailer = require('nodemailer');
+const cors = require('cors');
+const helmet = require('helmet');
+const path = require('path');
 const pino = require('express-pino-logger')();
 const fs = require('fs');
 require('dotenv').config();
@@ -15,6 +18,7 @@ app.use(session({secret: 'EgiNAjvvFVcbgAz'}));
 let db;
 
 app.use(pino);
+app.use(helmet());
 
 //Body parsers
 app.use(express.urlencoded({extended:true}));
@@ -133,6 +137,31 @@ mc.connect("mongodb://localhost:27017",function(err,client) {
     console.log('Server is listening at http://localhost:5000');
 });
 */
+
+const whitelist = ['http://localhost:3000', 'http://localhost:3001', 'https://shrouded-journey-38552.heroku...'];
+const corsOptions = {
+  origin: function (origin, callback) {
+    console.log("** Origin of request " + origin)
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      console.log("Origin acceptable")
+      callback(null, true)
+    } else {
+      console.log("Origin rejected")
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+
+app.use(cors(corsOptions));
+
+if (process.env.NODE_ENV === 'production') {
+    // Serve any static files
+    app.use(express.static(path.join(__dirname, 'client/build')));
+  // Handle React routing, return all requests to React app
+    app.get('*', function(req, res) {
+      res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    });
+}
 
 let port = process.env.PORT || 3001;
 app.listen(port);
