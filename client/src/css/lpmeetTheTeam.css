@@ -1,0 +1,140 @@
+/*note: the images have been coded into this css file thus any image changes will take place here  */
+.containTeam { 
+
+    width: 800px; 
+    height: 800px; 
+    margin: 20px auto;   
+    position: relative; 
+} 
+.topLeft { 
+
+    width: 240px; 
+    height: 240px;   
+    left: 100px;
+    /* left: 101px; */
+    /* top: 27px; */
+    position: absolute;
+    /* z-index: 1; */
+  
+    background-image: url('../assets/mTimages/RS_HP (1).svg');
+    transition:ease-in-out .2s;
+}
+
+.topLeft:hover{ 
+    background-image: url('../assets/mTimages/updated/RS_HP_PIC.svg');
+    transition: ease-in-out .2s;
+}  
+
+.mid { 
+
+    width: 240px; 
+    height: 240px;   
+    left: 275px; 
+    bottom: 450px;
+    position: absolute; 
+    background-image: url('../assets/mTimages/updated/JG_HP.svg');    
+    transition:ease-in-out .2s;
+    
+} 
+
+.mid:hover{
+    background-image: url('../assets/mTimages/updated/JG_HP_PIC.svg');
+    transition:ease-in-out .2s;
+}
+
+.topRight {  
+    width: 240px; 
+    height: 240px;   
+    left: 455px; 
+    /* left: 450px; */
+    /* top: 16px; */
+    /* z-index: 1; */
+    position: absolute; 
+    background-image: url('../assets/mTimages/updated/DPP_HP.svg');
+    transition:ease-in-out .2s;
+}
+
+.topRight:hover{
+    background-image: url('../assets/mTimages/updated/DPP_HP_PIC.svg');
+    transition:ease-in-out .2s;
+}
+
+.bottomLeft{ 
+ 
+    width: 240px; 
+    height: 240px; 
+    left: 96px; 
+    /* bottom: 255px;  */
+    bottom: 352px;
+    position: absolute; 
+
+} 
+
+.bottomRight { 
+
+    width: 240px; 
+    height: 240px;   
+    /* left: 100px;  */
+    /* bottom: 150px;  */
+    left: 456px;
+    bottom: 355px;
+    position: absolute; 
+
+}
+
+
+
+@media only screen and (max-width: 700px){
+    .containTeam{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    }
+    .topLeft { 
+        width: 100%;
+        /* height: auto; */
+   
+        height: 440px;   
+        left: 0px;
+        position:unset; 
+        background-image: url('../assets/mTimages/RS_HP (1).svg') !important;
+        background: no-repeat;
+        background-position: center;
+    }  
+    .topRight {  
+        /* width: 440px;  */
+        height: 440px;  
+        width: 100%;
+        /* height: auto; */
+        left: 0px; 
+        position:unset;
+        background-image: url('../assets/mTimages/updated/DPP_HP.svg') !important; 
+        background: no-repeat;
+        background-position: center;
+
+    }
+    .mid { 
+        /* width: 440px;  */
+        height: 440px;  
+        width: 100%;
+        /* height: auto; */
+        left: 0px; 
+        bottom: 0px; 
+        position: unset; 
+        background-image: url('../assets/mTimages/updated/JG_HP.svg') !important;
+        background: no-repeat;
+        background-position: center;
+
+    } 
+    /* empty hexagons */
+    .bottomLeft {  
+        display: none;
+    } 
+    .bottomRight {  
+        display: none;
+    }
+}
+
+

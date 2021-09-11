@@ -1,0 +1,246 @@
+
+/* TrainPanel.js */
+body {
+    /* background: #F0F4F7 !important; */
+    background: #F7FCFF !important;
+    
+}
+
+
+.trainTxtPanel{
+    margin-top: 25%;
+}
+
+
+
+/* 670px */
+@media only screen and (max-width: 670px){
+    .greenBehind{ 
+        /* background-color: #35B686; */
+        background-color: #2cdc83;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        bottom: 75%;
+        z-index: -1;
+    }
+}
+
+@media only screen and (min-width: 671px){
+    .greenBehind{ 
+        /* background-color: #35B686; */
+        background-color: #2cdc83;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        bottom: 50%;
+        z-index: -1;
+    }
+}
+
+
+@media only screen and (min-width: 700px) {
+    .greenBehind{
+        background-color: #2cdc83;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        bottom: 65%;
+        z-index: -1;
+    }
+}
+
+
+@media only screen and (min-width: 1300px){
+    .greenBehind{ 
+
+        background-color: #2cdc83;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        bottom: 4%;    
+        z-index: -1;
+    }
+}
+@media only screen and (min-width: 1600px) {
+    .greenBehind{ 
+    /* background-color: #35B686; */
+    background-color: #2cdc83;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 30%;
+    /* 25% */
+    z-index: -1;
+}
+}
+
+
+/* 
+.greenBehind{ 
+
+    background-color: #2cdc83;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 20%;
+
+    z-index: -1;
+} */
+
+
+.bgDiv{
+    background: #004c54 ;
+    height: fit-content;
+    overflow-wrap: normal;
+}
+
+.txtBox{
+    width: 60%;
+    padding: 0% 5% 5%;
+}
+
+
+/* ReviewCarousel.js */
+p.carouselText{
+    color: #004c54;
+    font-weight: 600;
+}
+
+.blockquote-footer{
+    text-align:end;
+    padding-right: 5%;
+    color: #F0F4F7 !important;
+}
+
+
+
+/* HowitWorks.js */
+
+.containStep {
+    display: flex;
+    margin-right: 20px ;   
+    position: relative; 
+}
+
+.hWBg {
+    width: 75%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 75%;
+    height: 0;
+    padding-top: 54.64%; /* (img-height / img-width * container-width) */  
+                /* (853 / 1280 * 100)   --- prob change this/fiddle w this */ 
+}
+
+.longHexContainer{
+    width: 50%;
+    height: fit-content;
+    position: absolute;
+    bottom: 53.4%;
+    left: 75%;
+}
+
+.longHex {
+    height: 37%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.numberImg {
+    width: 100%;
+    height: auto;
+}
+
+.numberImgContainer {
+    width: 10%;
+    position: absolute;
+    left: 105%;
+    bottom: 12%;
+}
+
+
+.hexTxtBox{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+}
+
+.btn-custom.seeMoreBtn{
+    color: #F7FCFF;
+    background-color: transparent;
+    height: fit-content;
+}
+
+.btn-custom.seeMoreBtn:hover{
+    color: #F7FCFF;
+    text-decoration: underline;
+    height: fit-content;
+
+}
+
+.btn-custom.seeMoreBtn:focus{
+    color: #F7FCFF;
+    border: none !important;
+    box-shadow: none !important;
+    text-decoration: underline;
+    height: fit-content;
+}
+
+
+/* Faq.js */
+
+.faqBtn{
+    color: #004c54 !important;
+    background-color: #F7FCFF;
+    width: 100%;
+    border-radius: 0px;
+    border:none;
+    border-top: #004c54 thick solid;
+    padding: 2%; 
+    /* font-size: calc(16px + (16 * (100vw - 768px)) / 672); */
+}
+
+.faqBtn:hover {
+    color: #004c54 !important;
+    background-color: #F7FCFF;
+    display: block;
+    /* font-size: calc(16px + (16 * (100vw - 768px)) / 672); */
+}
+
+.faqBtn:active{
+    color: #004c54 !important;
+    background-color: #F7FCFF;
+    /* font-size: calc(16px + (16 * (100vw - 768px)) / 672); */
+}
+
+.faqBtn:focus{
+    color: #004c54 !important;
+    background-color: #F7FCFF;
+    border-bottom: none;
+  /* font-size: calc(16px + (16 * (100vw - 768px)) / 672); */
+}
+
+#collapse-text{
+    padding: 0 2% 2% 2%;
+    /* /* font-weight: 500; */
+    /* font-size: 1.15rem;  */
+    font-weight: lighter;
+}
+
+
+.scaletext-wrapper{
+    overflow: visible !important;
+}
+
+
+/* Why you succeed  */
+
+.wYSMobile{
+    width: 90%;
+    border-top: solid white;
+}

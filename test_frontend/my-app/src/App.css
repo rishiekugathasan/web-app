@@ -1,0 +1,377 @@
+.questionnaire html, body.questionnaire {
+    color: #184E58;
+    text-align: center;
+}
+
+.questionnaire #hexagons {
+    margin: auto;
+    width: 60%;
+}
+
+.questionnaire input[type=number], .questionnaire #bio_sex, .questionnaire input[type=text] {
+    margin-top: 20px;
+}
+
+.questionnaire form {
+    display: inline-block;
+    max-width: 90vw;
+    margin-top: 150px;
+    /*
+    margin-top: 5%;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+
+    min-width: 890px;
+    min-height: 150px;
+
+    padding: 50px 50px 50px 50px;
+
+    margin-left: 10%;
+    margin-right:10%;
+    width: 50%;
+    */
+}
+
+.questionnaire input[type=number], .questionnaire option, .questionnaire select, .questionnaire input[type=text] {
+    max-width: 99vw;
+    padding: 12px 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.questionnaire .back_button {
+    background-color: #184E58;
+    color: white;
+    font-size: 15px;
+    margin: 4px 2px;
+    padding: 12px 30px;
+    cursor: pointer;
+
+    border: solid;
+    border-radius: 15px;
+    border-color: grey;
+
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.questionnaire input[type=submit] {
+    background-color: #184E58;
+    color: white;
+    font-size: 15px;
+    margin: 4px 2px;
+    padding: 12px 30px;
+    cursor: pointer;
+
+    border: solid;
+    border-radius: 15px;
+    border-color: grey;
+
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+.questionnaire #current_count {
+    text-align: center;
+    color: #184E58;
+}
+
+.questionnaire #count {
+    text-align: center;
+    color: whitesmoke;
+    font-size: 25px;
+}
+
+.questionnaire .hexagon {
+  width: 100px;
+  height: 55px;
+  position: relative;
+  left: 28%;
+  bottom: 50px;
+  z-index: -22;
+  background-color: #184E58;
+  bottom: 65px;
+}
+
+.questionnaire .hexagon, 
+.questionnaire .hexagon:before, 
+.questionnaire .hexagon:after {
+  background: #184E58;
+  box-shadow: 0 0 10px rgba(0,0,0,0.8);   
+}
+
+.questionnaire .hexagon:before,
+.questionnaire .hexagon:after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  width: 57px;
+  height: 57px;
+  transform: rotate(145deg) skew(22.5deg);
+}
+
+.questionnaire .hexagon:before {
+  top: -29px;
+}
+
+.questionnaire .hexagon:after {
+  top: 27px;
+}
+
+.questionnaire .hexagon span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 55px;
+  background: #184E58;
+  z-index: 1;
+}
+
+.questionnaire .chosen_one {
+    animation: action 0.3s linear alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes action {
+    0% { 
+        transform: translateY(0); 
+        transition-timing-function: ease-in-out;
+    }
+    100% { 
+        transform: translateY(-25px); 
+        transition-timing-function: ease-in-out;
+    }
+}
+
+.questionnaire #hex_1 {
+
+    background: #679096;
+    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    height: 50px;
+    width: 50px;
+
+    /*
+    position: relative;
+    left: 570px;
+    top: 200px;
+    */
+    position: absolute;
+    top: 30px;
+    right: 260px;
+}
+
+.questionnaire #hex_2 {
+
+    background: #518087;
+    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    height: 50px;
+    width: 50px;
+
+    position: absolute;
+    top: 30px;
+    right: 210px;
+} 
+
+.questionnaire #hex_3 {
+    background: #4B757D;
+    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    height: 50px;
+    width: 50px;
+
+    position: absolute;
+    top: 30px;
+    right: 160px;
+}
+
+.questionnaire #hex_4 {
+
+    background: #3B7078;
+    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    height: 50px;
+    width: 50px;
+
+    position: absolute;
+    top: 30px;
+    right: 110px;
+}
+
+.questionnaire #hex_5 {
+
+    background: #31616A;
+    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    height: 50px;
+    width: 50px;
+
+    position: absolute;
+    top: 30px;
+    right: 60px;
+}
+
+.questionnaire #hex_6 {
+    background: #184E58;
+    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    height: 50px;
+    width: 50px;
+
+    position: absolute;
+    top: 30px;
+    right: 10px;
+}
+
+.questionnaire .hexagons {
+    max-height: 50px;
+}
+
+.questionnaire #mc_question {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.questionnaire #question3 > input[type=number], .questionnaire #question4 > input[type=number], .questionnaire #question5 > input[type=number] {
+    opacity: 0.5;
+}
+
+.questionnaire #question3 > .questionnaire input[type=number]:hover, .questionnaire #question4 > input[type=number]:hover, .questionnaire #question5 > input[type=number]:hover {
+    opacity: 1;
+}
+
+.questionnaire #btnControl {
+    display: none;
+}
+
+.questionnaire #ft_cms, .questionnaire #ft_inches {
+    display: none;
+}
+
+.questionnaire #btnControl:checked + label > input {
+    display: inline-block;
+}
+
+.questionnaire #btnControl_2 {
+    display: none;
+}
+
+.questionnaire #ft_cms_2 {
+    display: none;
+}
+
+.questionnaire #btnControl_2:checked + label > input {
+    display: inline-block;
+}
+
+.questionnaire #feet_text, .questionnaire #kgs_text, .questionnaire #ideal_kgs_text {
+    margin-right: 50px;
+}
+
+.questionnaire .cms, .questionnaire #pounds, .questionnaire #ideal_pounds {
+    margin-bottom: 25px;
+}
+
+.questionnaire #btnControl_3, .questionnaire #btnControl_4 {
+    display: none;
+}
+
+.questionnaire #btnControl_3:checked + label > input, .questionnaire #btnControl_4:checked + label > input {
+    display: inline-block;
+}
+
+.questionnaire #kgs, .questionnaire #pounds {
+    display: none;
+}
+
+.questionnaire #btnControl_5, .questionnaire #btnControl_6 {
+    display: none;
+}
+
+.questionnaire #btnControl_5:checked + label > input, .questionnaire #btnControl_6:checked + label > input {
+    display: inline-block;
+    width: 35%;
+}
+
+.questionnaire #ideal_kgs, .questionnaire #ideal_pounds {
+    display: none;
+}
+
+.questionnaire #cms_text, .questionnaire #feet_text, .questionnaire #kgs_text, .questionnaire #pounds_text, .questionnaire #ideal_kgs_text, .questionnaire #ideal_pounds_text {
+    font-weight: bold;
+    font-size: 20px;
+}

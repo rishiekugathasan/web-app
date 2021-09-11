@@ -1,0 +1,37 @@
+[
+  {
+      "question":"What's your biological sex?",
+      "answers":[
+        "Male",
+        "Female",
+        "Other"
+      ]
+  },
+  {
+    "question":"Whats your goal(s)? Pick 1 or more",
+    "answers":[
+      "Muscle build and get stronger",
+      "Fat loss and get leaner",
+      "Athletic optimization (A protocol to support long + intense performance)",
+      "Sweat have fun and develop healthy eating lifestyle"
+    ]
+  },
+  {
+    "question":"Making time for exercise + workout is...",
+    "answers":[
+      "Easy for me to do",
+      "Has been tough so far",
+      "I'm very busy, but I will make time"
+    ]
+  },
+  {
+      "question":"What best describes your diet?",
+      "answers":[
+        "No restriction",
+        "Vegan or vegetarian",
+        "Paleo-keto",
+        "Mediterranean",
+        "Other"
+      ]
+  }
+]

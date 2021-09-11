@@ -1,0 +1,25 @@
+.pagesList {
+  flex-direction: column;
+  align-items: flex-start;
+  color: #004c54;
+}
+
+.pagesList li {
+  color: #004c54;
+  list-style: none;
+  padding-bottom: 5%;
+}
+
+
+.footerMobile{
+  background-color: #E8F7F2;
+  flex-direction: column;
+  align-items: flex-start;
+  
+
+}
+
+a{
+  color: #004c54 !important;
+  text-decoration: none !important;
+}

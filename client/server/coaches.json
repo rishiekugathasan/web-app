@@ -1,0 +1,35 @@
+[
+    {
+      "name":"Zhongli",
+      "position":"Group Exercise Instructor",
+      "story":"Harold is gay",
+      "profilePic":"imagepath",
+      "images":[
+        "image1",
+        "image2",
+        "image3"
+      ]
+    },
+    {
+      "name":"Razor",
+      "position":"Nutrion Coach",
+      "story":"Jerald likes big pp",
+      "profilePic":"imagepath1",
+      "images":[
+        "image4",
+        "image5",
+        "image6"
+      ]
+    },
+    {
+      "name":"Yanfei",
+      "position":"Wellness Coach",
+      "story":"Bagel supports big pp nation",
+      "profilePic":"imagepath2",
+      "images":[
+        "image7",
+        "image8",
+        "image9"
+      ]
+    }
+  ]

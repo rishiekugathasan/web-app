@@ -1,0 +1,61 @@
+body{
+    background: #F7FCFF !important;
+    /* font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300))); */
+}
+
+
+
+
+label.form-label{
+    color: #004c54;
+}
+
+.contactForm_col-1 {
+    width: 50%;
+}
+
+.contactForm_col-2 {
+    width: 50%;
+}
+
+@media(max-width: 900px){ 
+    .contactForm{
+       flex-direction: column;
+    }
+    /* // now your first column will take the full width of the parent 
+    // container which will push the second column below it */
+    .contactForm_col-1{ 
+       width: 100%;
+    }
+    .contactForm_col-2{
+       width: 100%;
+    }
+}
+
+
+.contactFormInputs{
+    background: #E8F7F2 !important;
+    border: none !important;
+    box-shadow: none;
+}
+
+.contactFormInputs:active{
+    box-shadow: none;
+}
+/* 
+.form-control { 
+
+    background: red;
+} */
+
+input.contactFormInputs.form-control{
+    box-shadow: none;
+}
+
+textarea.contactFormInputs.form-control{
+    box-shadow: none;
+}
+
+a.linkTo {
+    text-decoration: none;
+}
