@@ -134,7 +134,8 @@ mc.connect("mongodb://localhost:27017",function(err,client) {
 });
 */
 
-app.listen(3001);
+let port = process.env.PORT || 3001;
+app.listen(port);
 console.log('Server is listening at http://localhost:3001');
 
 function checkEmail(email) {
