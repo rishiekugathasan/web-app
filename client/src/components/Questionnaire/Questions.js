@@ -135,11 +135,11 @@ export class Questions extends React.Component {
               <Route exact path="/quiz/question_3">
                   <form action='/question/3' method='POST' data-netlify="true" name="form_3" encType="application/x-www-form-urlencoded" data-netlify-recaptcha="true">
                     <input type="hidden" name="form-name" value="form_3"/>
-                    <label for="bio_sex">{question_1.question}</label><br/>
-                    <select id="bio_sex" name={question_1.question}>
-                      <option value="male" name="male">{answer_1[0]}</option>
-                      <option value="female" name="female">{answer_1[1]}</option>
-                      <option value="other" name="other">{answer_1[2]}</option>
+                    <label for="bio_sex">What's your biological sex?</label><br/>
+                    <select id="bio_sex" name="What's your biological sex?">
+                      <option value="male" name="male">Male</option>
+                      <option value="female" name="female">Female</option>
+                      <option value="other" name="other">Other</option>
                     </select><br/><br/>
                     <input type="submit" value="Submit" name="submit_3"/>
                     <div className="hexagons">
@@ -269,27 +269,27 @@ export class Questions extends React.Component {
                 <Route exact path="/quiz/question_7">
                   <form action='/question/7' method='POST' data-netlify="true" name="form_7" encType="application/x-www-form-urlencoded" data-netlify-recaptcha="true">
                       <input type="hidden" name="form-name" value="form_7"/>
-                      <p id="mc_question">{question_2.question}</p>
+                      <p id="mc_question">Whats your goal(s)? Pick 1 or more</p>
                       <p>We want to custom plan for your specific goals.</p>
                       <div className="radio-buttons">
                         <label className="option">
                             <input type="checkbox" id='goal_1' name="What's your goal?" value='Muscle build and get stronger'/> 
-                            <span>{answer_2[0]}</span>
+                            <span>Muscle build and get stronger</span>
                             <img src={muscle} alt="muscle" className="image"/>
                         </label>
                         <label className="option">
                             <input type="checkbox" id='goal_2' name="What's your goal?" value='Fat loss and get leaner'/> 
-                            <span>{answer_2[1]}</span>
+                            <span>Fat loss and get leaner</span>
                             <img src={fatloss} alt="fatloss" className="image"/>
                         </label>
                         <label className="option">
                             <input type="checkbox" id='goal_3' name="What's your goal?" value='Athletic optimization (A protocol to support long + intense performance)'/> 
-                            <span>{answer_2[2]}</span>
+                            <span>Athletic optimization (A protocol to support long + intense performance)</span>
                             <img src={optimization} alt="optimization" className="image"/>
                         </label>
                         <label className="option">
                             <input type="checkbox" id='goal_4' name="What's your goal?" value='Sweat have fun and develop healthy eating lifestyle'/> 
-                            <span>{answer_2[3]}</span>
+                            <span>Sweat have fun and develop healthy eating lifestyle</span>
                             <img src={healthy} alt="healthy" className="image"/>
                         </label>
                         <br></br><br></br>
@@ -316,22 +316,22 @@ export class Questions extends React.Component {
                 <Route exact path="/quiz/question_8">
                   <form action='/question/8' method='POST' data-netlify="true" name="form_8" encType="application/x-www-form-urlencoded" data-netlify-recaptcha="true">
                       <input type="hidden" name="form-name" value="form_8"/>
-                      <p id="mc_question">{question_3.question}</p>
+                      <p id="mc_question">Making time for exercise + workout is...</p>
                       <p>We can always make workouts more efficient, lets figure out where you are right now.</p>
                       <div className="radio-buttons">
                         <label className="option">
                             <input type="radio" id='time_1' name='Making time for exercise + workout is...' value='Easy for me to do'/> 
-                            <span>{answer_3[0]}</span><br></br><br></br>
+                            <span>Easy for me to do</span><br></br><br></br>
                             <img src={easy_2} alt="easy_2" className="image_2"/>
                         </label>
                         <label className="option">
                             <input type="radio" id='time_2' name='Making time for exercise + workout is...' value='Has been tough so far'/> 
-                            <span>{answer_3[1]}</span><br></br><br></br>
+                            <span>Has been tough so far</span><br></br><br></br>
                             <img src={tough_2} alt="tough_2" className="image_2"/>
                         </label>
                         <label className="option">
                             <input type="radio" id='time_3' name='Making time for exercise + workout is...' value="I'm very busy, but I will make time"/> 
-                            <span>{answer_3[2]}<br></br><br></br></span>
+                            <span>I'm very busy, but I will make time<br></br><br></br></span>
                             <img src={busy_2} alt="busy_2" className="image_2"/>
                         </label>
 
@@ -402,31 +402,31 @@ export class Questions extends React.Component {
                 <Route exact path="/quiz/question_10">
                   <form action='/question/10' method='POST' data-netlify="true" name="form_10" encType="application/x-www-form-urlencoded" data-netlify-recaptcha="true">
                       <input type="hidden" name="form-name" value="form_10"/>
-                      <p id="mc_question">{question_4.question}</p>
+                      <p id="mc_question">What best describes your diet?</p>
                       <div className="radio-buttons">
                         <label className="option">
                             <input type="radio" id='diet_1' name='What best describes your diet?' value='No restriction'/> 
-                            <span>{answer_4[0]}</span><br></br><br></br>
+                            <span>No restriction</span><br></br><br></br>
                             <img src={lock_3} alt="lock_3" className="image_3"/>
                         </label>
                         <label className="option">
                             <input type="radio" id='diet_2' name='What best describes your diet?' value='Vegan or vegetarian'/> 
-                            <span>{answer_4[1]}</span><br></br><br></br>
+                            <span>Vegan or vegetarian</span><br></br><br></br>
                             <img src={vegan_3} alt="vegan_3" className="image_3"/>
                         </label>
                         <label className="option">
                             <input type="radio" id='diet_3' name='What best describes your diet?' value='Paleo-keto'/> 
-                            <span>{answer_4[2]}<br></br><br></br></span>
+                            <span>Paleo-keto<br></br><br></br></span>
                             <img src={paleoKeto_3} alt="paleoKeto_3" className="image_3"/>
                         </label>
                         <label className="option">
                             <input type="radio" id='diet_4' name='What best describes your diet?' value='Mediterranean'/> 
-                            <span>{answer_4[3]}<br></br><br></br></span>
+                            <span>Mediterranean<br></br><br></br></span>
                             <img src={mediterranean_3} alt="mediterranean_3" className="image_3"/>
                         </label>
                         <label className="option">
                             <input type="radio" id='diet_5' name='What best describes your diet?' value='Other'/> 
-                            <span>{answer_4[4]}<br></br><br></br></span>
+                            <span>Other<br></br><br></br></span>
                             <img src={other_3} alt="other_3" className="image_3"/>
                         </label>
                         
