@@ -141,8 +141,23 @@ mc.connect("mongodb://localhost:27017",function(err,client) {
 });
 */
 
+if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
+    app.use(express.static(path.join(__dirname, 'client/build')));
+
+    app.get('*', function (req, res) {
+        res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    });
+};
+
+// Catch any bad requests
+app.get('*', (req, res) => {
+    res.status(200).json({
+        msg: 'Catch All'
+    });
+});
+
 let port = process.env.PORT || 3001;
-app.listen(port);
+app.listen(port, () => console.log(`BACK_END_SERVICE_PORT: ${port}`));
 console.log('Server is listening at http://localhost:3001');
 
 function checkEmail(email) {
