@@ -22,6 +22,11 @@ app.use(cors());
 //Body parsers
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 app.get('/', (req,res) => {
     res.send("Hello World!");
@@ -140,21 +145,6 @@ mc.connect("mongodb://localhost:27017",function(err,client) {
     console.log('Server is listening at http://localhost:5000');
 });
 */
-
-if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
-    app.use(express.static(path.join(__dirname, 'client/build')));
-
-    app.get('*', function (req, res) {
-        res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-    });
-};
-
-// Catch any bad requests
-app.get('*', (req, res) => {
-    res.status(200).json({
-        msg: 'Catch All'
-    });
-});
 
 let port = process.env.PORT || 3001;
 app.listen(port, () => console.log(`BACK_END_SERVICE_PORT: ${port}`));
