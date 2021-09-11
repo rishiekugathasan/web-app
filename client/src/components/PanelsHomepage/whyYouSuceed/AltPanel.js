@@ -1,12 +1,11 @@
-/**fkdl;skfl;sdkfsd */
 import React from 'react'
 
 export default function AltPanel() {
     
-    const questions = [,
+    const questions = [
         {text:" Fit for life - Our training will develop you to become your own coach, for life!"},
-        {text: "From the very beginning you  are coached by experts in Movement, Strength, Medicine, and Nutrition. Our proven MyCure Team system will make you live healthier, stronger, happier."},
-        {text: "You are beautifully unique - at MyCure fitness, your programs are custom tailored around your lifestyle. Realistic life can lead to extraordinary results."}
+        {text: "The MyCure Fitness System will help you live healthier, stronger, happier. Delivered by experts with over 20 years experience, achieved by you, ASAP."},
+        {text: "Accurate and seamless technology integration to make every MyCure Fitness Programs custom made for you. quote: \“We make getting fit achievable\”"}
     ]
   
       const renderQA = (t, index) => {
