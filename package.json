@@ -22,7 +22,7 @@
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\"",
     "client:build": "cd client && npm run build",
-    "start": "node server.js"
+    "start": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\""
   },
   "repository": {
     "type": "git",
