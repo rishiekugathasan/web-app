@@ -187,14 +187,14 @@ function checkEmail(email) {
 function sendEmail(email) {
     /*
     User: fitnessautomail@gmail.com
-    Pass: verycooljames 
+    Pass: verycooljames123! 
     */
 
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
             user: 'fitnessautomail@gmail.com',
-            pass: 'verycooljames'
+            pass: 'verycooljames123!'
         }
     });
     
