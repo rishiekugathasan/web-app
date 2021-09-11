@@ -1,1 +1,2 @@
-web:cd client && npm start
+web:cd client && npm i && npm start
+api:node server.js
