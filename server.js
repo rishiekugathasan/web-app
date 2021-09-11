@@ -57,7 +57,12 @@ app.post('/question/:quesNum',(req,res) => {
     let questionNumber = parseInt(req.params.quesNum);
 
     console.log(req.body);
-
+    if (questionNumber == 2) {
+        req.session.current_age = req.body.current_age;
+    }
+    if (questionNumber == 3) {
+        req.session["What's your biological sex?"] = req.body["What's your biological sex?"];
+    }
     if (questionNumber == 4) {
         req.session.feet = req.body.feet;
         req.session.cms = req.body.cms;
@@ -80,8 +85,8 @@ app.post('/question/:quesNum',(req,res) => {
     else if (questionNumber == 10) {
         req.session['What best describes your diet?'] = req.body['What best describes your diet?'];
     }
-    else {
-        req.session[String(Object.keys(req.body)[0])] = String(req.body[Object.keys(req.body)[0]]);
+    else if (questionNumber == 12) {
+        req.session.squat = req.body.squat;
     }
     
     if (questionNumber == 14) {
@@ -90,12 +95,12 @@ app.post('/question/:quesNum',(req,res) => {
                 message: "Email was not entered properly! The email service providers we support include gmail, hotmail, aol, outlook, yahoo, icloud, me, mac."
             });
         }
-
-        console.log(req.session);
-
+        req.session.email = req.body.email;
+        
         sendEmail(req.body.email);
         delete req.session.cookie;
         delete req.session.undefined;
+        console.log(req.session);
         updateDoc(req.session);
         req.session.destroy();
 
