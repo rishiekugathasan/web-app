@@ -154,9 +154,7 @@ mc.connect("mongodb://localhost:27017",function(err,client) {
         //console.log(err);
         return;
     }
-
     db = client.db("testdb");
-
     db.collection("test").insertOne({key1:1, key2:2}, function(err,result) {
         if (err) throw err;
         console.log(result);
@@ -253,7 +251,7 @@ async function ShadySendMail(name, email, text, res){
 }
 
 async function updateDoc(ans) {
-    //   console.log(ans);
+    console.log("ANSWER: " + ans);
 
       const auth = new google.auth.GoogleAuth({
         keyFile: "credentials.json",
@@ -277,6 +275,16 @@ async function updateDoc(ans) {
             await googleSheets.spreadsheets.batchUpdate ({ 
             spreadsheetId: spreadsheetId, 
             resource: {requests: [ {addSheet: {properties: {title: date }}}]}});
+
+            await googleSheets.spreadsheets.values.append({
+                auth,
+                spreadsheetId,
+                range: date,
+                valueInputOption: "USER_ENTERED",
+                resource: {
+                  values: [["age","feet", "cms", "inches", "kgs", "lbs", "target kgs", "target lbs", "goal", "activity level", "diet", "squats", "email"]]
+                },
+              });
         }
     
       // Write row(s) to spreadsheet
@@ -286,9 +294,10 @@ async function updateDoc(ans) {
         range: date,
         valueInputOption: "USER_ENTERED",
         resource: {
-          values: [Object.values(ans)],
+          values: [Object.values(ans)]
         },
       });
+      console.log(typeof Object.values(ans));
 }
 
 function checkSkip(questionNumber, values) {
