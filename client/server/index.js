@@ -1,13 +1,13 @@
 const express = require('express');
 const app = express();
 const mc = require('mongodb').MongoClient;
+const aboutUs = require('./routes/aboutUs');
+const index = require('./routes/index');
 const coaches = require('./coaches.json');
 const questions = require('./questions.json');
 const { google } = require("googleapis");
 const nodemailer = require('nodemailer');
 const pino = require('express-pino-logger')();
-const cors = require('cors');
-const path = require('path');
 const fs = require('fs');
 require('dotenv').config();
 
@@ -16,37 +16,13 @@ app.use(session({secret: 'EgiNAjvvFVcbgAz'}));
 
 let db;
 
+app.use('/aboutUs',aboutUs);
+app.use('/',index);
 app.use(pino);
-app.use(cors());
 
 //Body parsers
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'build')));
-
-app.get('/#/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-app.get('/#/aboutUs',(req,res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-app.get('/#/products',(req,res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-app.get('/#/quiz/question_1',(req,res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-app.get('/#/contactUs',(req,res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-app.get('/', (req,res) => {
-    res.send("Hello World!");
-});
 
 app.get('/whoweare',function(req,res) {
     res.sendFile('./dummyPages/whoWeAre.html',{root:__dirname});
@@ -57,12 +33,7 @@ app.post('/question/:quesNum',(req,res) => {
     let questionNumber = parseInt(req.params.quesNum);
 
     console.log(req.body);
-    if (questionNumber == 2) {
-        req.session.current_age = req.body.current_age;
-    }
-    if (questionNumber == 3) {
-        req.session["What's your biological sex?"] = req.body["What's your biological sex?"];
-    }
+
     if (questionNumber == 4) {
         req.session.feet = req.body.feet;
         req.session.cms = req.body.cms;
@@ -85,8 +56,8 @@ app.post('/question/:quesNum',(req,res) => {
     else if (questionNumber == 10) {
         req.session['What best describes your diet?'] = req.body['What best describes your diet?'];
     }
-    else if (questionNumber == 12) {
-        req.session.squat = req.body.squat;
+    else {
+        req.session[String(Object.keys(req.body)[0])] = String(req.body[Object.keys(req.body)[0]]);
     }
     
     if (questionNumber == 14) {
@@ -95,12 +66,12 @@ app.post('/question/:quesNum',(req,res) => {
                 message: "Email was not entered properly! The email service providers we support include gmail, hotmail, aol, outlook, yahoo, icloud, me, mac."
             });
         }
-        req.session.email = req.body.email;
-        
+
+        console.log(req.session);
+
         sendEmail(req.body.email);
         delete req.session.cookie;
         delete req.session.undefined;
-        console.log(req.session);
         updateDoc(req.session);
         req.session.destroy();
 
@@ -167,8 +138,7 @@ mc.connect("mongodb://localhost:27017",function(err,client) {
 });
 */
 
-let port = process.env.PORT || 3001;
-app.listen(port, () => console.log(`BACK_END_SERVICE_PORT: ${port}`));
+app.listen(3001);
 console.log('Server is listening at http://localhost:3001');
 
 function checkEmail(email) {
@@ -192,14 +162,14 @@ function checkEmail(email) {
 function sendEmail(email) {
     /*
     User: fitnessautomail@gmail.com
-    Pass: verycooljames123! 
+    Pass: verycooljames 
     */
 
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
             user: 'fitnessautomail@gmail.com',
-            pass: 'verycooljames123!'
+            pass: 'verycooljames'
         }
     });
     

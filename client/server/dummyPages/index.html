@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <h1>Index</h1>
+
+  <div id='questionnaire'>
+    <form action='/questions' method='POST'>
+      <p>Would you prefer a male or female for an instructor?</p>
+      <input type="radio" id='option_1' name='preferred_gender' value='Male'>
+      <label for='option_1'>Male</label><br>
+      <input type="radio" id='option_2' name='preferred_gender' value='Female'>
+      <label for='option_2'>Female</label><br>
+      <input type="radio" id='option_3' name='preferred_gender' value='Other'>
+      <label for='option_3'>Other</label><br>
+
+      <p>Would you prefer group activities or something focused towards nutrion?</p>
+      <input type="radio" id='option_4' name='group_nutrion' value='group_only'>
+      <label for='option_4'>Only group focused</label><br>
+      <input type="radio" id='option_5' name='group_nutrion' value='nutrion_only'>
+      <label for='option_5'>Only nutrion focused</label><br>
+      <input type="radio" id='option_6' name='group_nutrion' value='Neither'>
+      <label for='option_6'>Neither</label><br>
+      <input type="radio" id='option_7' name='group_nutrion' value='Either'>
+      <label for='option_7'>Either</label><br><br>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
